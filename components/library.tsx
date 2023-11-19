@@ -1,8 +1,17 @@
 "use client";
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useAuthModal } from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
+
 export const Library = () => {
-  const handleClick = () => {
+  const authModal = useAuthModal();
+  const user = useUser();
+
+  const onClick = () => {
+    if (!user) {
+      return authModal.onOpen();
+    }
     //TODO: handle upload later,
   };
 
@@ -20,7 +29,7 @@ export const Library = () => {
           <p className="text-md text-neutral-400 font-medium">Your Library</p>
         </div>
         <AiOutlinePlus
-          onClick={handleClick}
+          onClick={onClick}
           size={26}
           className="text-neutral-400 hover:text-white cursor-pointer transition"
         />

@@ -11,6 +11,7 @@ import { useUser } from "@/hooks/useUser";
 import { FaUserAlt } from "react-icons/fa";
 import { Modal } from "./modal";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -31,7 +32,9 @@ export const Header = ({ children, className }: HeaderProps) => {
     router.refresh();
 
     if (error) {
-      console.log(error);
+      toast.error(error.message);
+    } else {
+      toast.success("Logged out sucessfully");
     }
   };
 
