@@ -22,7 +22,7 @@ export default async function Home() {
           <h1 className="text-white text-2xl text-semibold">Newest Songs</h1>
         </div>
         {/* TODO: songs components card to build */}
-        <PageContent />
+        <PageContent songs={songs} />
       </div>
     </div>
   );

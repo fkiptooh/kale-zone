@@ -126,7 +126,7 @@ export const UploadModal = () => {
         <Input
           id="author"
           disabled={isLoading}
-          {...register("autho", { required: true })}
+          {...register("author", { required: true })}
           placeholder="Song artist"
         />
         <div>
